@@ -11,7 +11,7 @@ import {
     Navigator,
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
-
+import Home from './Home';
 const HOME = 'Home';
 const HOME_NORMAL = require('../images/tab/ic_tab_home.png');
 const HOME_FOCUS = require('../images/tab/ic_tab_home_press.png');
@@ -55,7 +55,7 @@ export default class MainScreen extends Component {
         return (
             <View style={{flex:1}}>
                 <TabNavigator>
-                    {this._renderTabItem(HOME_NORMAL, HOME_FOCUS, HOME, this._createChildView(HOME))}
+                    {this._renderTabItem(HOME_NORMAL, HOME_FOCUS, HOME, <Home />)}
                     {this._renderTabItem(CATEGORY_NORMAL, CATEGORY_FOCUS, CATEGORY, this._createChildView(CATEGORY))}
                     {this._renderTabItem(FAXIAN_NORMAL, FAXIAN_FOCUS, FAXIAN, this._createChildView(FAXIAN))}
                     {this._renderTabItem(CART_NORMAL, CART_FOCUS, CART, this._createChildView(CART))}
