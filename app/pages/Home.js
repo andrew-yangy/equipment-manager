@@ -18,6 +18,8 @@ import {
 import { connect } from 'react-redux';
 import Header from '../components/Header';
 import { fetchItems } from '../actions/ItemsAction'
+import Loading from '../components/Loading'
+
 class Home extends Component {
 
     constructor(props) {
@@ -47,6 +49,7 @@ class Home extends Component {
         return (
             <View>
                 <Header />
+                {equipments.loading?<Loading />:
                 <ListView
                     enableEmptySections={true}
                     style={{backgroundColor:'white'}}
@@ -63,6 +66,7 @@ class Home extends Component {
                     }
                 >
                 </ListView>
+                }
             </View>
         )
     }
